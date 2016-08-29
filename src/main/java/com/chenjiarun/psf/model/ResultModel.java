@@ -14,13 +14,25 @@ package com.chenjiarun.psf.model;/**
  */
 public class ResultModel {
 
+    /**
+     * 消息
+     */
     private String msg;
 
+    /**
+     * 状态吗
+     */
     private Integer code;
 
+    /**
+     * 数据
+     */
     private Object data;
 
-    private Boolean status;
+    /**
+     * 状态,true表示请求成功,false表示请求失败,默认为false
+     */
+    private Boolean status = false;
 
     public String getMsg() {
         return msg;
