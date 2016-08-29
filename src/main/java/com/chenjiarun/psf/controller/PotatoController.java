@@ -50,4 +50,15 @@ public class PotatoController {
     }
 
 
+    public HttpServletResponse getHttpServletResponse() {
+        return httpServletResponse;
+    }
+
+    public HttpServletRequest getHttpServletRequest() {
+        return httpServletRequest;
+    }
+
+    public ResultModel getResultModel() {
+        return resultModel;
+    }
 }

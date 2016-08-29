@@ -18,4 +18,12 @@ public class HttpConstant {
     public static final String TOTAL = "total";
 
 
+    public static final String RESPONSE_CHARACTER_ENCODING = "UTF-8";
+
+    public static final String RESPONSE_CONTENT_TYPE = "application/json;charset=utf-8";
+
+    public static final String RESPONSE_ALLOW_ORIGIN_KEY = "Access-Control-Allow-Origin";
+
+    public static final String RESPONSE_ALLOW_ORIGIN_VALUE = "*";
+
 }

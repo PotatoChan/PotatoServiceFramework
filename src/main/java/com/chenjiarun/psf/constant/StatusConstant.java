@@ -19,5 +19,7 @@ public class StatusConstant {
 
     public static final StatusPair SUCCESS = new StatusPair(200, "请求成功");
 
+    public static final StatusPair ERROR_JSON_RESOLVE = new StatusPair(801, "JSON解析出错");
+
 
 }

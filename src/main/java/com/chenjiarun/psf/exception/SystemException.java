@@ -2,6 +2,8 @@ package com.chenjiarun.psf.exception;/**
  * Created by Ives on 16/8/29.
  */
 
+import com.chenjiarun.psf.model.StatusPair;
+
 /**
  * PotatoServiceFramework
  * 功能：系统层面的Exception
@@ -14,5 +16,18 @@ package com.chenjiarun.psf.exception;/**
  */
 public class SystemException extends Exception {
 
+    private StatusPair statusPair;
+
+    public SystemException(StatusPair statusPair) {
+        this.statusPair = statusPair;
+    }
+
+    public StatusPair getStatusPair() {
+        return statusPair;
+    }
+
+    public void setStatusPair(StatusPair statusPair) {
+        this.statusPair = statusPair;
+    }
 }
 

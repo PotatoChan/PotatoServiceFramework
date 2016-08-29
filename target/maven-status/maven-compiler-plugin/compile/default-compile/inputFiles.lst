@@ -1,0 +1,14 @@
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/constant/HttpConstant.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/model/StatusPair.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/constant/StatusConstant.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/exception/SystemException.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/util/ResultUtils.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/util/JsonUtils.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/annotation/PotatoResponse.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/context/PotatoSpringAppContext.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/model/PotatoModel.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/aspect/PotatoAspect.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/controller/PotatoController.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/exception/BusinessException.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/model/ResultModel.java
+/Users/Ives/code/walink/PotatoServiceFramework/src/main/java/com/chenjiarun/psf/util/UuidUtils.java
