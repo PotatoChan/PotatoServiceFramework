@@ -4,6 +4,7 @@ package com.chenjiarun.psf.util;/**
 
 import com.chenjiarun.psf.constant.HttpConstant;
 import com.chenjiarun.psf.constant.StatusConstant;
+import com.chenjiarun.psf.controller.PotatoController;
 import com.chenjiarun.psf.model.ResultModel;
 import com.chenjiarun.psf.model.StatusPair;
 
@@ -28,7 +29,7 @@ public class ResultUtils {
      * @param resultModel 请求结果对象
      * @param status      状态值
      */
-    public void setStatus(ResultModel resultModel, Boolean status) {
+    public static void setStatus(ResultModel resultModel, Boolean status) {
 
         if (isNotEmpty(resultModel)) {
             resultModel.setStatus(status);
@@ -42,7 +43,7 @@ public class ResultUtils {
      * @param resultModel 请求结果对象
      * @param msg         提示信息
      */
-    public void setMsg(ResultModel resultModel, String msg) {
+    public static void setMsg(ResultModel resultModel, String msg) {
 
         if (isNotEmpty(resultModel)) {
             resultModel.setMsg(msg);
@@ -56,7 +57,7 @@ public class ResultUtils {
      * @param resultModel 请求结果对象
      * @param code        状态码
      */
-    public void setCode(ResultModel resultModel, Integer code) {
+    public static void setCode(ResultModel resultModel, Integer code) {
         if (isNotEmpty(resultModel)) {
             resultModel.setCode(code);
         }
@@ -68,7 +69,7 @@ public class ResultUtils {
      * @param resultModel 请求结果对象
      * @param statusPair  状态码-信息 对象
      */
-    public void setStatusPair(ResultModel resultModel, StatusPair statusPair) {
+    public static void setStatusPair(ResultModel resultModel, StatusPair statusPair) {
 
         if (isNotEmpty(resultModel)) {
 
@@ -83,7 +84,7 @@ public class ResultUtils {
      * @param resultModel 请求结果对象
      * @param data        响应数据
      */
-    public void setData(ResultModel resultModel, Object data) {
+    public static void setData(ResultModel resultModel, Object data) {
         if (isNotEmpty(resultModel)) {
             resultModel.setData(data);
         }
@@ -98,7 +99,7 @@ public class ResultUtils {
      * @param subData     响应子数据
      * @return
      */
-    public Map<String, Object> addSubData(Map<String, Object> data, String subDataName, Object subData) {
+    public static Map<String, Object> addSubData(Map<String, Object> data, String subDataName, Object subData) {
 
 
         if (isNotEmpty(data) && isNotEmpty(subDataName) && isNotEmpty(subData)) {
@@ -119,7 +120,7 @@ public class ResultUtils {
      * @param total       数组长度
      * @return
      */
-    public Map<String, Object> addSubData(Map<String, Object> data, String subDataName, Object subData, Long total) {
+    public static Map<String, Object> addSubData(Map<String, Object> data, String subDataName, Object subData, Long total) {
 
         addSubData(data, subDataName, subData);
         addSubData(data, HttpConstant.TOTAL, total);
@@ -134,7 +135,7 @@ public class ResultUtils {
      * @param resultModel 请求结果对象
      * @param data        响应数据
      */
-    public void setResult(ResultModel resultModel, Object data) {
+    public static void setResult(ResultModel resultModel, Object data) {
 
         if (isNotEmpty(resultModel) && isNotEmpty(data)) {
 
@@ -147,6 +148,27 @@ public class ResultUtils {
         }
     }
 
+
+    /**
+     * 设置结果集,默认成功, 状态码与提示信息参照 StatusConstant.SUCCESS
+     *
+     * @param potatoController Controller的基类,可从中获取RequestModel
+     * @param data             响应数据
+     */
+    public static void setResult(PotatoController potatoController, Object data) {
+
+        ResultModel resultModel = potatoController.getResultModel();
+
+        if (isNotEmpty(resultModel) && isNotEmpty(data)) {
+
+            setData(resultModel, data);
+
+            setStatusPair(resultModel, StatusConstant.SUCCESS);
+
+            setStatus(resultModel, true);
+
+        }
+    }
 
     /**
      * 判断ResultModels是否为空

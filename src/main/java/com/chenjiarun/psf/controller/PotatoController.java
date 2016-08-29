@@ -4,6 +4,7 @@ package com.chenjiarun.psf.controller;/**
 
 import com.chenjiarun.psf.model.ResultModel;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,6 +45,7 @@ public class PotatoController {
      * @param httpServletRequest  客户端请求
      * @param httpServletResponse 服务端响应
      */
+    @ModelAttribute
     public void handlerServlet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         this.httpServletRequest = httpServletRequest;
         this.httpServletResponse = httpServletResponse;
