@@ -2,6 +2,7 @@ package com.chenjiarun.psf.controller;/**
  * Created by Ives on 16/8/29.
  */
 
+import com.chenjiarun.psf.model.ResultModel;
 import org.springframework.stereotype.Controller;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +30,13 @@ public class PotatoController {
      * 服务端响应
      */
     private HttpServletRequest httpServletRequest;
+
+
+    /**
+     * 请求结果对象
+     */
+    private ResultModel resultModel = new ResultModel();
+
 
     /**
      * 在每个请求之前获取HttpServletRequest和HttpServletRequest
