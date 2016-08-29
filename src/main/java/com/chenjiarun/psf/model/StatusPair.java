@@ -14,8 +14,14 @@ package com.chenjiarun.psf.model;/**
  */
 public class StatusPair {
 
+    /**
+     * 状态码
+     */
     private Integer code;
 
+    /**
+     * 描述信息
+     */
     private String msg;
 
     public StatusPair(Integer code, String msg) {
