@@ -184,6 +184,25 @@ public class ResultUtils {
     }
 
     /**
+     * 设置结果集,默认成功, 状态码与提示信息参照 StatusConstant.SUCCESS
+     *
+     * @param potatoController Controller的基类,可从中获取RequestModel
+     */
+    public static void setResult(PotatoController potatoController) {
+
+        ResultModel resultModel = potatoController.getResultModel();
+
+        if (isNotEmpty(resultModel)) {
+
+            setStatusPair(resultModel, StatusConstant.SUCCESS);
+
+            setStatus(resultModel, true);
+
+        }
+    }
+
+
+    /**
      * 判断ResultModels是否为空
      *
      * @param resultModel 请求结果对象
