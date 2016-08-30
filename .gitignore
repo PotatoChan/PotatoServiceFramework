@@ -1,2 +1,4 @@
 /.idea/
 /target/
+/target/maven-status/
+/target/psf.jar
