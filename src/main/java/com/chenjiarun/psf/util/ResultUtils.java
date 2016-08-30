@@ -148,6 +148,19 @@ public class ResultUtils {
         }
     }
 
+    /**
+     * 设置结果集,默认成功, 状态码与提示信息参照 StatusConstant.SUCCESS,适用于无信息返回的操作
+     *
+     * @param resultModel 请求结果对象
+     */
+    public static void setResult(ResultModel resultModel) {
+
+        if (isNotEmpty(resultModel)) {
+            setStatusPair(resultModel, StatusConstant.SUCCESS);
+            setStatus(resultModel, true);
+        }
+    }
+
 
     /**
      * 设置结果集,默认成功, 状态码与提示信息参照 StatusConstant.SUCCESS

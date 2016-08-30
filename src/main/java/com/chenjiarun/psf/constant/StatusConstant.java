@@ -21,5 +21,9 @@ public class StatusConstant {
 
     public static final StatusPair ERROR_JSON_RESOLVE = new StatusPair(801, "JSON解析出错");
 
+    public static final StatusPair ERROR_MD5 = new StatusPair(802, "MD5加密出错");
+
+    public static final StatusPair ERROR_SYSTEM_UNKNOW = new StatusPair(803, "系统未知错误");
+
 
 }

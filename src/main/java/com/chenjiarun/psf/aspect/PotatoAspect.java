@@ -4,10 +4,13 @@ package com.chenjiarun.psf.aspect;/**
 
 import com.chenjiarun.psf.annotation.PotatoResponse;
 import com.chenjiarun.psf.constant.HttpConstant;
+import com.chenjiarun.psf.constant.StatusConstant;
 import com.chenjiarun.psf.controller.PotatoController;
+import com.chenjiarun.psf.exception.BusinessException;
 import com.chenjiarun.psf.exception.SystemException;
 import com.chenjiarun.psf.model.ResultModel;
 import com.chenjiarun.psf.util.JsonUtils;
+import com.chenjiarun.psf.util.ResultUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -37,17 +40,34 @@ public class PotatoAspect {
 
         PotatoController potatoController = (PotatoController) proceedingJoinPoint.getTarget();
 
+        ResultModel resultModel = null;
+
         try {
 
             proceedingJoinPoint.proceed();
 
+            resultModel = potatoController.getResultModel();
+
+        } catch (BusinessException be) {
+
+            resultModel = potatoController.getResultModel();
+            ResultUtils.setStatusPair(resultModel, be.getStatusPair());
+            ResultUtils.setStatus(resultModel, false);
+
+        } catch (SystemException se) {
+
+            resultModel = potatoController.getResultModel();
+            ResultUtils.setStatusPair(resultModel, se.getStatusPair());
+            ResultUtils.setStatus(resultModel, false);
+
         } catch (Throwable throwable) {
 
-            throwable.printStackTrace();
+            resultModel = potatoController.getResultModel();
+            ResultUtils.setStatusPair(resultModel, StatusConstant.ERROR_SYSTEM_UNKNOW);
+            ResultUtils.setStatus(resultModel, false);
 
         }
 
-        ResultModel resultModel = potatoController.getResultModel();
 
         String resultStr = null;
 
@@ -56,10 +76,9 @@ public class PotatoAspect {
             resultStr = JsonUtils.toJsonString(resultModel);
 
         } catch (SystemException e) {
-
             e.printStackTrace();
-
         }
+
 
         HttpServletResponse response = beautifyResponse(potatoController.getHttpServletResponse());
 

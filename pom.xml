@@ -7,7 +7,7 @@
     <groupId>com.chenjiarun</groupId>
     <artifactId>psf</artifactId>
     <version>1.0</version>
-    <name>psf</name>
+    <name>PotatoServiceFramework</name>
     <packaging>jar</packaging>
 
     <properties>
@@ -183,6 +183,13 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
             <version>${com.fasterxml.jackson.version}</version>
+        </dependency>
+
+        <!--编码-->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
         </dependency>
 
     </dependencies>
