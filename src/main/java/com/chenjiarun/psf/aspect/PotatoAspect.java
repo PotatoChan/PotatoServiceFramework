@@ -66,6 +66,7 @@ public class PotatoAspect {
             ResultUtils.setStatusPair(resultModel, StatusConstant.ERROR_SYSTEM_UNKNOW);
             ResultUtils.setStatus(resultModel, false);
 
+            throwable.printStackTrace();
         }
 
 

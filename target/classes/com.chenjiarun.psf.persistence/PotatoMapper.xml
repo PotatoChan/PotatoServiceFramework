@@ -16,7 +16,7 @@
 	<sql id="sort">
 		<if test="sort !=null and sort !=''">
 			<![CDATA[
-				order by #{sort} #{order}
+				order by ${sort} ${order}
 			]]>
 		</if>
 	</sql>
