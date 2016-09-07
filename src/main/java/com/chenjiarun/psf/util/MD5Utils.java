@@ -29,7 +29,11 @@ public class MD5Utils {
      */
     public static String encode(String plaintext) throws SystemException {
         try {
-            return DigestUtils.md5Hex(plaintext.getBytes(SystemConstant.ENCODING_UTF_8));
+
+            String result = DigestUtils.md5Hex(plaintext.getBytes(SystemConstant.ENCODING_UTF_8));
+
+            return result.toUpperCase();
+
         } catch (Exception e) {
 
             throw new SystemException(StatusConstant.ERROR_MD5);
